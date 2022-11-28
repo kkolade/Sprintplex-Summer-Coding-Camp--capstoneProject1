@@ -20,8 +20,8 @@ $color-map: (
 // ------FONT VARIABLES-------
 
 //-----Font Family-----
-$font-primary: "Cocogoose", Arial, sans-serif;
-$font-secondary: "Lato", Arial, sans-serif;
+$font-primary: "Lato", Arial, sans-serif;
+$font-secondary: "Cocogoose", Arial, sans-serif;
 // $font-tertiary: ;
 //-----Font Weight Map-----
 $font-weight-map: (
@@ -67,12 +67,9 @@ $breakpoint-map-down: (
 //-----HEIGHT & WIDTH VARIABLES-----
 $height-header: 6rem;
 $height-footer: 6rem;
-$width-content-lg: 82%;
-$width-content-md: 90%;
 
-// $width-content-lg: 114rem;
-// $width-content-md: 114rem;
-// $width-content-sm: 114rem;
+$width-content-desktop: 80%;
+$width-content-mobile: 90%;
 
 //-----SPACE VARIABLES-----
 // rems
@@ -132,15 +129,25 @@ $z-modal: 1000;
 // --------------------
 @font-face {
   font-family: "Cocogoose";
-  font-weight: "400";
-  src: url("../fonts/cocogoose-semilight.ttf"); //IE-9 Compat Modes
-  src: url("../fonts/cocogoose-semilight.ttf") format("embeded-opentype"),
-    url("../fonts/cocogoose-semilight.ttf") format("woff"),
-    url("../fonts/cocogoose-semilight.ttf") format("woff2"),
-    url("../fonts/cocogoose-semilight.ttf") format("truetype"),
-    url("../fonts/cocogoose-semilight.ttf") format("svg");
+  font-weight: 400;
+  src: url("../fonts/mada/Mada-Bold.ttf"); //IE-9 Compat Modes
+  src: url("../fonts/mada/Mada-Bold.ttf") format("embeded-opentype"),
+    url("../fonts/mada/Mada-Bold.ttf") format("woff"),
+    url("../fonts/mada/Mada-Bold.ttf") format("woff2"),
+    url("../fonts/mada/Mada-Bold.ttf") format("truetype"),
+    url("../fonts/mada/Mada-Bold.ttf") format("svg");
 }
 
+@font-face {
+  font-family: "Cocogoose";
+  font-weight: 200;
+  src: url("../fonts/mada/Mada-Light.ttf"); //IE-9 Compat Modes
+  src: url("../fonts/mada/Mada-Light.ttf") format("embeded-opentype"),
+    url("../fonts/mada/Mada-Light.ttf") format("woff"),
+    url("../fonts/mada/Mada-Light.ttf") format("woff2"),
+    url("../fonts/mada/Mada-Light.ttf") format("truetype"),
+    url("../fonts/mada/Mada-Light.ttf") format("svg");
+}
 // -------------------
 // -----GLOBALS-----
 // -------------------
@@ -200,13 +207,17 @@ img {
 /*--- REUSEABLE CLASSES ---*/
 .row,
 .column {
-  max-width: $width-content;
+  max-width: $width-content-mobile;
   margin: 0 auto;
 }
 
-// .section {
-//   padding: $sp-2;
-// }
+.section {
+  padding: $sp-3 * 2 0;
+}
+
+.hidden {
+  display: none;
+}
 
 // .section__title {
 //   font-size: $font-h2;
@@ -223,3 +234,11 @@ img {
 //   letter-spacing: 1px;
 //   word-spacing: $sp-0-25;
 // }
+
+@media screen and (min-width: 780px) {
+  .row,
+  .column {
+    max-width: $width-content-desktop;
+    margin: 0 auto;
+  }
+}

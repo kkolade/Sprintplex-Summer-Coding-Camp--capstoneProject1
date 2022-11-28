@@ -2,14 +2,85 @@
 
 /* LAYOUTS*/
 
-//------Alert-------
-
 //------header-------
+.header {
+  &__user {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
 
 //------Navigation-------
+.header {
+  &__navbar {
+    display: flex;
+  }
 
-//------Main-------
+  &__brand-img {
+    display: inline-block;
+    width: 35rem;
+  }
 
+  &__nav {
+    display: flex;
+  }
+
+  &__cta {
+    display: inline-block;
+    width: 20rem;
+  }
+}
+//------Hero-------
+.hero {
+  // height: 80vh;
+  min-height: 100%;
+  background: linear-gradient(
+      0deg,
+      rgba(240, 240, 240, 0.9),
+      rgba(240, 240, 240, 0.9)
+    ),
+    url(../images/pexels-antony-trivet-12942548.jpeg);
+  background-size: cover;
+  background-position: center center;
+  font-family: b.$font-secondary;
+  font-weight: 400;
+
+  &__title--small {
+    display: block;
+    font-weight: 200;
+    font-size: b.font-size(h2);
+    margin: b.$sp-1-25 0;
+  }
+
+  &__title--large {
+    font-weight: 400;
+    font-size: b.font-size(hero);
+    line-height: 0.9;
+    margin-bottom: b.$sp-1;
+    display: block;
+    background-image: url(../images/headline-background-pattern.jpg);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+  }
+
+  &__title--small,
+  &__title--large {
+    color: b.color(primary);
+  }
+
+  &__description {
+    color: b.color(secondary);
+    background-color: b.$color-white;
+    font-weight: b.font-weight(light);
+    padding: b.$sp-1-25;
+  }
+
+  &__sub-title {
+    font-size: b.font-size(h2);
+    padding: b.$sp-1-25 0;
+  }
+}
 //---Section= Section_Name----
 
 //------Aside-------
